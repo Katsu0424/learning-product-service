@@ -55,12 +55,14 @@ val ktlintCheck by tasks.registering(JavaExec::class) {
     description = "Check Kotlin code style"
     classpath = ktlint
     mainClass.set("com.pinterest.ktlint.Main")
-    // see https://pinterest.github.io/ktlint/install/cli/#command-line-usage for more information
     args(
         "**/src/**/*.kt",
         "**.kts",
         "!**/build/**",
     )
+}
+tasks.build {
+    dependsOn("copyPreCommitHook")
 }
 tasks.check {
     dependsOn(ktlintCheck)
@@ -71,13 +73,19 @@ tasks.register<JavaExec>("ktlintFormat") {
     classpath = ktlint
     mainClass.set("com.pinterest.ktlint.Main")
     jvmArgs("--add-opens=java.base/java.lang=ALL-UNNAMED")
-    // see https://pinterest.github.io/ktlint/install/cli/#command-line-usage for more information
     args(
         "-F",
         "**/src/**/*.kt",
         "**.kts",
         "!**/build/**",
     )
+}
+tasks.register<Copy>("copyPreCommitHook") {
+    description = "Copy pre-commit git hook from the scripts to the .git/hooks folder."
+    group = "git hooks"
+    outputs.upToDateWhen { false }
+    from("$rootDir/scripts/pre-commit")
+    into("$rootDir/.git/hooks/")
 }
 tasks.test {
     useJUnitPlatform()
