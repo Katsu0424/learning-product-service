@@ -1,5 +1,14 @@
 # Project Setup
 
+## TODO
+- ktlint by pre-commit
+- TestContainers for integration test
+- Docker for mysql
+- Migration by sqldef
+- Certification
+- Cache
+- (maybe)K8s
+
 ## Tech Stack
 - Java 17  
 - Kotlin 2.1.0  
