@@ -22,7 +22,11 @@ class UserController(
         @PathVariable id: Long,
     ): ResponseEntity<UserResponse> {
         val user = userService.findById(UserId(id))
-        return if (user != null) { ResponseEntity.ok(UserResponse(user.id, user.name)) } else { ResponseEntity.notFound().build() }
+        return if (user != null) {
+            ResponseEntity.ok(UserResponse(user.id, user.name))
+        } else {
+            ResponseEntity.notFound().build()
+        }
     }
 
     data class UserResponse(
