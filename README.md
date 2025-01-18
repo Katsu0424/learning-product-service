@@ -19,7 +19,7 @@
 - Kotest  
 
 ## JDK Management
-Ussing [SDKMAN!](https://sdkman.io/) to manage JDK versions.
+Using [SDKMAN!](https://sdkman.io/) to manage JDK versions.
 
 ## Code Lint & Format
 ```bash
