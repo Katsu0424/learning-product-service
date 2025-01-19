@@ -62,7 +62,7 @@ val ktlintCheck by tasks.registering(JavaExec::class) {
     )
 }
 tasks.build {
-    dependsOn("copyPreCommitHook")
+    dependsOn("installPreCommitScript")
 }
 tasks.check {
     dependsOn(ktlintCheck)
@@ -80,12 +80,12 @@ tasks.register<JavaExec>("ktlintFormat") {
         "!**/build/**",
     )
 }
-tasks.register<Copy>("copyPreCommitHook") {
+tasks.register<Copy>("installPreCommitScript") {
     description = "Copy pre-commit git hook from the scripts to the .git/hooks folder."
     group = "git hooks"
     outputs.upToDateWhen { false }
-    from("$rootDir/scripts/pre-commit")
-    into("$rootDir/.git/hooks/")
+    from(File(rootProject.rootDir, "scripts/pre-commit"))
+    into(File(rootProject.rootDir, ".git/hooks"))
 }
 tasks.test {
     useJUnitPlatform()
