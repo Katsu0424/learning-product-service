@@ -4,7 +4,8 @@ echo "Running git pre-commit hook"
 ktlintCheckStatus=$?
 # return 1 if check fails
 if [[ $ktlintCheckStatus -ne 0 ]]; then
-     exit 1
+    echo "ktlint check failed. Please fix the issues before committing."
+    exit 1
 else
-     exit 0
+    exit 0
 fi
