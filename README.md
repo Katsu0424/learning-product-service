@@ -1,12 +1,11 @@
 # Project Setup
 
 ## TODO
-- ktlint by pre-commit
-- TestContainers for integration test
 - Docker for mysql
 - Exposed-json
-- CI by github actions
 - Migration by sqldef
+- TestContainers for integration test
+- CI by github actions
 - openapi
   - put the link on readme
 - coroutin(Consider compatibility with mysql, Exposed and Embedded Web Servers)
