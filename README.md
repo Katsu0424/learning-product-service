@@ -4,10 +4,15 @@
 - ktlint by pre-commit
 - TestContainers for integration test
 - Docker for mysql
+- Exposed-json
+- CI by github actions
 - Migration by sqldef
+- openapi
+  - put the link on readme
+- coroutin(Consider compatibility with mysql, Exposed and Embedded Web Servers)
 - Certification
 - Cache
-- (maybe)K8s
+- (maybe)K8s, migrate to [modular monolith](https://r-kaga.com/blog/what-is-modular-monolith), microservices
 
 ## Tech Stack
 - Java 17  
