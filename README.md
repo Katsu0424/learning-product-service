@@ -24,9 +24,15 @@
 - Kotest  
 
 ## JDK Management
-Using [SDKMAN!](https://sdkman.io/) to manage JDK versions.
+Using [SDKMAN!](https://sdkman.io/) to manage JDK versions.</br>
+After installing [SDKMAN!](https://sdkman.io/), you can easily switch to the versions specified in your `.sdkmanrc` by running:
+
+```bash
+sdk env
+```
 
 ## Code Lint & Format
 ```bash
 ./gradlew ktlintCheck   # Check for lint issues
 ./gradlew ktlintFormat  # Auto-format code
+```
