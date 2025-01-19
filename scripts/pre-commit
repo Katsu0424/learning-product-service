@@ -1,10 +1,26 @@
 #!/bin/bash
+set -e
+
 echo "Running git pre-commit hook"
+
+# Initialize SDKMAN! if it exists
+if [ -f "${HOME}/.sdkman/bin/sdkman-init.sh" ]; then
+  source "${HOME}/.sdkman/bin/sdkman-init.sh"
+fi
+
+# Switch to the desired Java version via SDKMAN!
+# Replace the version below with your own
+sdk use java 17.0.13-tem
+
+# Run ktlint check
 ./gradlew ktlintCheck
 ktlintCheckStatus=$?
-# return 1 if check fails
+
+# If ktlint check fails, stop the commit
 if [[ $ktlintCheckStatus -ne 0 ]]; then
-    echo "ktlint check failed. Please fix the issues before committing."
+    echo "---------------------------------------------------------------"
+    echo "ktlint check failed. Please fix the issues before committing!!!"
+    echo "---------------------------------------------------------------"
     exit 1
 else
     exit 0
