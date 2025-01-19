@@ -86,6 +86,12 @@ tasks.register<Copy>("installPreCommitScript") {
     outputs.upToDateWhen { false }
     from(File(rootProject.rootDir, "scripts/pre-commit"))
     into(File(rootProject.rootDir, ".git/hooks"))
+    // Make the pre-commit script executable
+    doLast {
+        exec {
+            commandLine("chmod", "+x", "${rootProject.rootDir}/.git/hooks/pre-commit")
+        }
+    }
 }
 tasks.test {
     useJUnitPlatform()
