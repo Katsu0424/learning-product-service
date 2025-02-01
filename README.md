@@ -18,6 +18,10 @@ After installing, you can easily switch to the versions specified in your `.sdkm
 ```bash
 sdk env
 ```
+and then if you don't have a suitable version for this app, please do below
+```bash
+sdk env install
+```
 
 ## bootrun
 ```bash
