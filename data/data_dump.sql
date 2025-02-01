@@ -1,0 +1,1 @@
+INSERT INTO `user` VALUES (1,'yamada'),(2,'鈴木'),(3,'田中');
