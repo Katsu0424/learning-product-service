@@ -1,7 +1,6 @@
 # Project Setup
 
 ## TODO
-- Exposed-json
 - Migration by sqldef
 - TestContainers for integration test
 - CI by github actions
