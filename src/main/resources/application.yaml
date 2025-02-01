@@ -1,6 +1,0 @@
-spring:
-    datasource:
-        url: jdbc:mysql://mysql:3306/my_database?serverTimezone=Asia/Tokyo
-        username: my_user
-        password: my_pass # hardcoding because it's a demo and created by Docker Compose
-        driver-class-name: com.mysql.cj.jdbc.Driver
