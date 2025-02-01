@@ -1,7 +1,6 @@
 # Project Setup
 
 ## TODO
-- Docker for mysql
 - Exposed-json
 - Migration by sqldef
 - TestContainers for integration test
@@ -13,22 +12,26 @@
 - Cache
 - (maybe)K8s, migrate to [modular monolith](https://r-kaga.com/blog/what-is-modular-monolith), microservices
 
-## Tech Stack
-- Java 17  
-- Kotlin 2.1.0  
-- Spring Boot 3.4.0  
-- MySQL (TBD)  
-- Exposed 0.58.0  
-- ktlint 1.5.0  
-- Kotest  
-
 ## JDK Management
 Using [SDKMAN!](https://sdkman.io/) to manage JDK versions.</br>
-After installing [SDKMAN!](https://sdkman.io/), you can easily switch to the versions specified in your `.sdkmanrc` by running:
-
+After installing, you can easily switch to the versions specified in your `.sdkmanrc` by running:
 ```bash
 sdk env
 ```
+
+## bootrun
+```bash
+docker-compose up --build -d
+```
+
+## Tech Stack
+- Java 17
+- Kotlin 2.1.0
+- Spring Boot 3.4.0
+- MySQL 8.0
+- Exposed 0.58.0
+- ktlint 1.5.0
+- Kotest
 
 ## Code Lint & Format
 ```bash
