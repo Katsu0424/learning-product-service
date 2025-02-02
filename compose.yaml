@@ -11,8 +11,8 @@ services:
       MYSQL_PASSWORD: my_pass
     volumes:
       # Mount the DDL and data dump files to the container
-      - ./data/ddl_dump.sql:/docker-entrypoint-initdb.d/01_ddl_dump.sql
-      - ./data/data_dump.sql:/docker-entrypoint-initdb.d/02_data_dump.sql
+      - ./db/init_data/ddl_dump.sql:/docker-entrypoint-initdb.d/01_ddl_dump.sql
+      - ./db/init_data/data_dump.sql:/docker-entrypoint-initdb.d/02_data_dump.sql
       - mysql_data:/var/lib/mysql
     ports:
       - "3306:3306"
