@@ -2,7 +2,7 @@
 
 ### Run the application and DB
 > [!NOTE]
-> If you need to start on your local, please see the [wiki](https://github.com/Katsu0424/test-containers/wiki)
+> If you need to start on your local, please see the [wiki](https://github.com/Katsu0424/test-containers/wiki/start-on-your-local#start-on-your-local)
 ```bash
 docker-compose up --build -d
 ```
