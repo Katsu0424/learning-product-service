@@ -25,7 +25,6 @@ mysqldef -umy_user -pmy_pass my_database < db/migration/v0.sql
 ## Others
 
 ### TODO
-- CI by github actions
 - openapi
   - put the link on readme
 - coroutin(Consider compatibility with mysql, Exposed and Embedded Web Servers)
