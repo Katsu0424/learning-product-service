@@ -1,0 +1,19 @@
+name: PR Check
+
+on:
+  pull_request:
+
+jobs:
+  lint:
+    name: Run Linter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: ./gradlew ktlintCheck
+
+  test:
+    name: Run Unit Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: ./gradlew test
