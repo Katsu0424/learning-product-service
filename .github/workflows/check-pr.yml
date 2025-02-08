@@ -1,0 +1,21 @@
+name: PR Check
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    name: Build Gradle Project
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'gradle'
+          cache-dependency-path: |
+            *.gradle*
+            gradle/wrapper/gradle-wrapper.properties
+      - run: ./gradlew ktlintCheck
+      - run: ./gradlew test
