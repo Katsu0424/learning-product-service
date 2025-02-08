@@ -25,8 +25,6 @@ mysqldef -umy_user -pmy_pass my_database < db/migration/v0.sql
 ## Others
 
 ### TODO
-- Docker for mysql
-- Exposed-json
 - Migration by sqldef
 - TestContainers for integration test
 - CI by github actions
