@@ -10,5 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: gradle/actions/setup-gradle@v4
+        with:
+          cache: true
       - run: ./gradlew ktlintCheck
       - run: ./gradlew test
