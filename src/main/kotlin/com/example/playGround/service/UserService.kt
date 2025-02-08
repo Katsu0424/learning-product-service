@@ -1,8 +1,8 @@
-package com.example.testContainers.service
+package com.example.playGround.service
 
-import com.example.testContainers.domain.User
-import com.example.testContainers.domain.UserEntity
-import com.example.testContainers.domain.UserId
+import com.example.playGround.domain.User
+import com.example.playGround.domain.UserEntity
+import com.example.playGround.domain.UserId
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.deleteWhere
 import org.jetbrains.exposed.sql.insertAndGetId

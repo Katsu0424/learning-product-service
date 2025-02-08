@@ -1,7 +1,7 @@
-package com.example.testContainers.controller
+package com.example.playGround.controller
 
-import com.example.testContainers.domain.UserId
-import com.example.testContainers.service.UserService
+import com.example.playGround.domain.UserId
+import com.example.playGround.service.UserService
 import io.kotest.core.spec.style.DescribeSpec
 import io.kotest.matchers.shouldBe
 import io.mockk.every
@@ -23,7 +23,7 @@ class UserControllerTest(
                     val userIdValue = 1L
                     val userId = UserId(userIdValue)
                     val user =
-                        com.example.testContainers.domain.User(
+                        com.example.playGround.domain.User(
                             id = userId,
                             name = "Alice",
                         )

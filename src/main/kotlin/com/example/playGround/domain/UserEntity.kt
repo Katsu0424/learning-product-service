@@ -1,4 +1,4 @@
-package com.example.testContainers.domain
+package com.example.playGround.domain
 
 import org.jetbrains.exposed.dao.id.LongIdTable
 

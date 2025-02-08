@@ -1,6 +1,6 @@
-package com.example.testContainers
+package com.example.playGround
 
-import com.example.testContainers.domain.UserEntity
+import com.example.playGround.domain.UserEntity
 import org.jetbrains.exposed.sql.SchemaUtils
 import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ApplicationRunner
@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional
 
 /**
  * This class is used to initialize the database schema.
- * It is executed when the application starts and if the schema does not exist, it creates it.
+ * It is executed when the application starts and if the schema does not exist.
  */
 @Component
 @Transactional

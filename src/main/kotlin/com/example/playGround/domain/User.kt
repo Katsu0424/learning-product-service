@@ -1,4 +1,4 @@
-package com.example.testContainers.domain
+package com.example.playGround.domain
 
 data class User(
     val id: UserId,

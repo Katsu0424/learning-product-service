@@ -1,7 +1,7 @@
-package com.example.testContainers.controller
+package com.example.playGround.controller
 
-import com.example.testContainers.domain.UserId
-import com.example.testContainers.service.UserService
+import com.example.playGround.domain.UserId
+import com.example.playGround.service.UserService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping

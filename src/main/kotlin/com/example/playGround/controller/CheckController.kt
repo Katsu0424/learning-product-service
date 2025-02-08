@@ -1,4 +1,4 @@
-package com.example.testContainers.controller
+package com.example.playGround.controller
 
 import org.springframework.context.annotation.Profile
 import org.springframework.core.env.Environment
