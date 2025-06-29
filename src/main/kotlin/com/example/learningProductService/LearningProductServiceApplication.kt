@@ -1,11 +1,11 @@
-package com.example.playGround
+package com.example.learningProductService
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-open class PlayGroundApplication
+open class LearningProductServiceApplication
 
 fun main(args: Array<String>) {
-    runApplication<PlayGroundApplication>(*args)
+    runApplication<LearningProductServiceApplication>(*args)
 }

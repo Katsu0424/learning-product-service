@@ -59,9 +59,6 @@ val ktlintCheck by tasks.registering(JavaExec::class) {
         "!**/build/**",
     )
 }
-tasks.build {
-    dependsOn("installPreCommitScript")
-}
 tasks.register<JavaExec>("ktlintFormat") {
     group = LifecycleBasePlugin.VERIFICATION_GROUP
     description = "Check Kotlin code style and format"
@@ -75,19 +72,7 @@ tasks.register<JavaExec>("ktlintFormat") {
         "!**/build/**",
     )
 }
-tasks.register<Copy>("installPreCommitScript") {
-    description = "Copy pre-commit git hook from the scripts to the .git/hooks folder."
-    group = "git hooks"
-    outputs.upToDateWhen { false }
-    from(File(rootProject.rootDir, "scripts/pre-commit"))
-    into(File(rootProject.rootDir, ".git/hooks"))
-    // Make the pre-commit script executable
-    doLast {
-        exec {
-            commandLine("chmod", "+x", "${rootProject.rootDir}/.git/hooks/pre-commit")
-        }
-    }
-}
+
 tasks.test {
     useJUnitPlatform()
 }
