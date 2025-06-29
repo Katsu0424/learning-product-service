@@ -2,6 +2,7 @@ plugins {
     kotlin("jvm") version "1.9.24"
     id("org.springframework.boot") version "3.4.0"
     id("io.spring.dependency-management") version "1.0.15.RELEASE"
+    id("com.google.cloud.tools.jib") version "3.4.3"
 }
 
 group = "org.example"
@@ -71,6 +72,28 @@ tasks.register<JavaExec>("ktlintFormat") {
         "**.kts",
         "!**/build/**",
     )
+}
+
+jib {
+    // 1. ベースイメージの設定
+    // JREのみを含む軽量なイメージを指定。
+    from {
+        image = "eclipse-temurin:17-jre-jammy"
+    }
+
+    // 2. ビルドするイメージの最終的なパスを設定
+    to {
+        image = "katsu424/learning-product-service"
+        tags = setOf("latest")
+    }
+
+    // 3. コンテナの設定
+    container {
+        // コンテナ起動時に実行されるコマンド
+        mainClass = "com.example.learningproductservice.LearningProductServiceApplication"
+        // コンテナがリッスンするポート
+        ports = listOf("8080")
+    }
 }
 
 tasks.test {
