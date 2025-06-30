@@ -90,7 +90,7 @@ jib {
     // 3. コンテナの設定
     container {
         // コンテナ起動時に実行されるコマンド
-        mainClass = "com.example.learningproductservice.LearningProductServiceApplication"
+        mainClass = "com.example.learningProductService.LearningProductServiceApplicationKt"
         // コンテナがリッスンするポート
         ports = listOf("8080")
     }
